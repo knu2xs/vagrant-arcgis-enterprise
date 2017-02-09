@@ -40,9 +40,6 @@ sudo cp /tmp/config_files/check_root_installer.sh /tmp/ArcGISServer/serverdiag/.
 # install ArcGIS Server as the arcgis user
 sudo su -c "/tmp/ArcGISServer/Setup -m silent -l yes -a /vagrant/resources/proprietary/server.prvc -d /opt/arcgis" arcgis
 
-# extract the default site configuration to the temp directory
-sudo su -c "tar -xvzf /vagrant/resources/server-site-config.tar.gz -C /opt/arcgis/server/usr/" arcgis
-
 # copy the startup file to the init.d directory so ArcGIS Server will know how to start with the instance boot
 sudo cp /tmp/config_files/arcgisserver /etc/init.d/
 
