@@ -21,14 +21,6 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
 
-  # Enable provisioning with a shell script. Additional provisioners such as
-  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
-  # documentation for more information about their specific syntax and use.
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   apt-get update
-  #   apt-get install -y apache2
-  # SHELL
-
   # Increase the hardware capacity
   # https://www.vagrantup.com/docs/virtualbox/configuration.html
   config.vm.provider :virtualbox do |vb|
@@ -37,6 +29,5 @@ Vagrant.configure("2") do |config|
   end
 
   # Provision using a shell script to install ArcGIS Server
-  #config.vm.provision "shell", path: "install_arcgis_server_setup.sh"
   config.vm.provision "shell", path: "install_arcgis_server.sh"
 end
