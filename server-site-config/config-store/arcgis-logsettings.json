@@ -1,1 +1,0 @@
-{"logDir":"/opt/arcgis/server/usr/logs/","logLevel":"WARNING","maxErrorReportsCount":10,"maxLogFileAge":90,"usageMeteringEnabled":false,"statisticsConfig":{"enabled":true,"samplingInterval":30,"maxHistory":0,"statisticsDir":"/opt/arcgis/server/usr/directories/arcgissystem"}}

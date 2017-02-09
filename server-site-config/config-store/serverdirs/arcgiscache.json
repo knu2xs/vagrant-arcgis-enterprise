@@ -1,1 +1,0 @@
-{"name":"arcgiscache","physicalPath":"/opt/arcgis/server/usr/directories/arcgiscache","directoryType":"CACHE","cleanupMode":"NONE","maxFileAge":0,"description":"Stores tile caches used by map, globe, and image services for rapid performance.","useLocalDir":"false","localDirectoryPath":"","virtualPath":"/rest/directories/arcgiscache"}

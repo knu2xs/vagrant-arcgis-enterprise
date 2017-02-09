@@ -1,1 +1,0 @@
-{"name":"arcgisjobs","physicalPath":"/opt/arcgis/server/usr/directories/arcgisjobs","directoryType":"JOBS","cleanupMode":"TIME_ELAPSED_SINCE_LAST_MODIFIED","maxFileAge":360,"description":"Stores results and other information from geoprocessing services.","useLocalDir":"false","localDirectoryPath":"","virtualPath":"/rest/directories/arcgisjobs"}

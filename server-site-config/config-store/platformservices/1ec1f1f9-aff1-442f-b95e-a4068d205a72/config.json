@@ -1,1 +1,0 @@
-{"id":"1ec1f1f9-aff1-442f-b95e-a4068d205a72","type":"SYNCHRONIZATION_SERVICE","provider":"ZooKeeper","info":{"connectionString":"UBUNTU-XENIAL.LOCALDOMAIN:2181","port":2181,"zkLeaderElectionPort":2190,"zkPeerPort":2182,"ssl":false,"version":"3.5.0-alpha"}}

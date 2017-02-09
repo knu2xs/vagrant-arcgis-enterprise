@@ -1,1 +1,0 @@
-{"name":"arcgissystem","physicalPath":"/opt/arcgis/server/usr/directories/arcgissystem","directoryType":"SYSTEM","cleanupMode":"NONE","maxFileAge":0,"description":"Stores directories and files used internally by ArcGIS Server.","useLocalDir":"false","localDirectoryPath":"","virtualPath":"/rest/directories/arcgissystem"}

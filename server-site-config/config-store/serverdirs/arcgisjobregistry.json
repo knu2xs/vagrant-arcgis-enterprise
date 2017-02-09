@@ -1,1 +1,0 @@
-{"name":"arcgisjobregistry","physicalPath":"/opt/arcgis/server/usr/directories/arcgissystem/arcgisjobregistry","directoryType":"JOBREGISTRY","cleanupMode":"NONE","maxFileAge":0,"description":"Stores files that are used internally by the GIS server.","useLocalDir":"false","localDirectoryPath":"","virtualPath":"/rest/directories/arcgisjobregistry"}
