@@ -31,17 +31,17 @@ sudo chown -R arcgis:users /opt/arcgis
 sudo chmod -R 744 /opt/arcgis
 
 # extract the installation resources
-tar -zxvf /vagrant/resources/ArcGIS_Server*.tar.gz -C /tmp
+tar -zxvf /vagrant/resources/proprietary/ArcGIS_Server*.tar.gz -C /tmp
 
 # copy hacked diagnostic files so installation does not hang up - not exactly elegant, but it is working so far...
 sudo cp /tmp/config_files/check_limits.sh /tmp/ArcGISServer/serverdiag/.diag/
 sudo cp /tmp/config_files/check_root_installer.sh /tmp/ArcGISServer/serverdiag/.diag/
 
 # install ArcGIS Server as the arcgis user
-sudo su -c "/tmp/ArcGISServer/Setup -m silent -l yes -a /vagrant/resources/server.prvc -d /opt/arcgis" arcgis
+sudo su -c "/tmp/ArcGISServer/Setup -m silent -l yes -a /vagrant/resources/proprietary/server.prvc -d /opt/arcgis" arcgis
 
 # extract the default site configuration to the temp directory
-#sudo su -c "tar -xvzf /vagrant/resources/site-config-store.tar.gz -C /opt/arcgis/server/usr/" arcgis
+sudo su -c "tar -xvzf /vagrant/resources/server-site-config.tar.gz -C /opt/arcgis/server/usr/" arcgis
 
 # copy the startup file to the init.d directory so ArcGIS Server will know how to start with the instance boot
 sudo cp /tmp/config_files/arcgisserver /etc/init.d/
