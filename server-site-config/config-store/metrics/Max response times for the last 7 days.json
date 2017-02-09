@@ -1,0 +1,1 @@
+{"reportname":"Max response times for the last 7 days","since":"LAST_WEEK","queries":[{"resourceURIs":["services/"],"metrics":["RequestMaxResponseTime"]}],"metadata":{"temp":false,"title":"Max response times for the last 7 days","managerReport":true,"styles":{"services/":{"color":"#382DF5"}}}}

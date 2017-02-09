@@ -1,0 +1,73 @@
+{
+  "serviceName": "DynamicMappingHost",
+  "type": "MapServer",
+  "description": "This service is multi-tenant map service provider.",
+  "capabilities": "Map,Query,Data",
+  "provider": "ArcObjects11",
+  "clusterName": "default",
+  "minInstancesPerNode": 2,
+  "maxInstancesPerNode": 2,
+  "instancesPerContainer": 1,
+  "maxWaitTime": 60,
+  "maxStartupTime": 300,
+  "maxIdleTime": 180,
+  "maxUsageTime": 600,
+  "loadBalancing": "ROUND_ROBIN",
+  "isolationLevel": "HIGH",
+  "configuredState": "STARTED",
+  "recycleInterval": 24,
+  "recycleStartTime": "00:00",
+  "keepAliveInterval": -1,
+  "private": true,
+  "isDefault": false,
+  "maxUploadFileSize": 0,
+  "allowedUploadFileTypes": "",
+  "properties": {
+    "useLocalCacheDir": "false",
+    "outputDir": "${arcgisoutput}",
+    "sDEConnectionPoolTimeoutSec": "300",
+    "cacheDir": "",
+    "maxScale": "4000",
+    "filePath": "${AGSSERVER}/framework/etc/data/dmaps11/dmaps11.msd",
+    "maxRecordCount": "1000",
+    "supportedImageReturnTypes": "MIME+URL",
+    "clientCachingAllowed": "true",
+    "isCached": "false",
+    "dynamicMapsOnly": "true",
+    "virtualOutputDir": "/rest/directories/arcgisoutput",
+    "maxExportTilesCount": "100000",
+    "ignoreCache": "false",
+    "exportTilesAllowed": "false",
+    "cacheOnDemand": "false",
+    "sDEConnectionPoolSize": "100",
+    "minScale": "295000000",
+    "dmapsServiceCacheSize": "11",
+    "enableSDEConnectionPooling": "true"
+  },
+  "extensions": [
+    {
+      "typeName": "WFSServer",
+      "capabilities": "null",
+      "enabled": "true",
+      "maxUploadFileSize": 0,
+      "allowedUploadFileTypes": "",
+      "properties": {
+        "name": "DynamicWFS",
+        "title": "WFS"
+      }
+    },
+    {
+      "typeName": "WMSServer",
+      "capabilities": "GetCapabilities,GetFeatureInfo,GetLegendGraphic,GetMap,GetSchemaExtension,GetStyles",
+      "enabled": "false",
+      "maxUploadFileSize": 0,
+      "allowedUploadFileTypes": "",
+      "properties": {
+        "name": "DynamicWMS",
+        "title": "WMS"
+      }
+    }
+  ],
+  "frameworkProperties": {},
+  "datasets": []
+}

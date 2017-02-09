@@ -1,0 +1,60 @@
+{
+  "serviceName": "RasterProcessing",
+  "type": "ImageServer",
+  "description": "The RasterProcessing service is used by ArcGIS Server to process raster data.",
+  "capabilities": "Image,Metadata",
+  "provider": "ArcObjects",
+  "clusterName": "default",
+  "minInstancesPerNode": 0,
+  "maxInstancesPerNode": 2,
+  "instancesPerContainer": 1,
+  "maxWaitTime": 36000,
+  "maxStartupTime": 300,
+  "maxIdleTime": 180,
+  "maxUsageTime": 7200,
+  "loadBalancing": "ROUND_ROBIN",
+  "isolationLevel": "HIGH",
+  "configuredState": "STOPPED",
+  "recycleInterval": 24,
+  "recycleStartTime": "00:00",
+  "keepAliveInterval": -1,
+  "private": false,
+  "isDefault": true,
+  "maxUploadFileSize": 0,
+  "allowedUploadFileTypes": "",
+  "properties": {
+    "virtualOutputDir": "/rest/directories/arcgisoutput",
+    "outputDir": "${arcgisoutput}",
+    "path": "@",
+    "cacheControlMaxAge": "0",
+    "dynamicImageWorkspace": ""
+  },
+  "extensions": [
+    {
+      "typeName": "WCSServer",
+      "capabilities": null,
+      "enabled": "false",
+      "maxUploadFileSize": 0,
+      "allowedUploadFileTypes": "",
+      "properties": {}
+    },
+    {
+      "typeName": "WMSServer",
+      "capabilities": null,
+      "enabled": "false",
+      "maxUploadFileSize": 0,
+      "allowedUploadFileTypes": "",
+      "properties": {}
+    },
+    {
+      "typeName": "JPIPServer",
+      "capabilities": null,
+      "enabled": "false",
+      "maxUploadFileSize": 0,
+      "allowedUploadFileTypes": "",
+      "properties": {}
+    }
+  ],
+  "frameworkProperties": {},
+  "datasets": []
+}

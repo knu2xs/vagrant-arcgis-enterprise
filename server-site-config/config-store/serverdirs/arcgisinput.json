@@ -1,0 +1,1 @@
+{"name":"arcgisinput","physicalPath":"/opt/arcgis/server/usr/directories/arcgissystem/arcgisinput","directoryType":"INPUT","cleanupMode":"NONE","maxFileAge":0,"description":"Stores source files (such as maps and data) for services that you publish.","useLocalDir":"false","localDirectoryPath":"","virtualPath":"/rest/directories/arcgisinput"}

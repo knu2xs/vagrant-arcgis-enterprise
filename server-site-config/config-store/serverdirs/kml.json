@@ -1,0 +1,1 @@
+{"name":"kml","physicalPath":"/opt/arcgis/server/usr/directories/arcgissystem/kml","directoryType":"KML","cleanupMode":"NONE","maxFileAge":0,"description":"Stores files used by KML network links published on ArcGIS Server.","useLocalDir":"false","localDirectoryPath":"","virtualPath":"/rest/directories/kml"}

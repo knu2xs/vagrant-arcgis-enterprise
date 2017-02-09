@@ -1,0 +1,1 @@
+{"reportname":"Total requests for the last 7 days","since":"LAST_WEEK","queries":[{"resourceURIs":["services/"],"metrics":["RequestCount"]}],"metadata":{"temp":false,"title":"Total requests for the last 7 days","managerReport":true,"styles":{"services/":{"color":"#D900D9"}}}}

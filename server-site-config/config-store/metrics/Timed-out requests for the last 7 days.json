@@ -1,0 +1,1 @@
+{"reportname":"Timed-out requests for the last 7 days","since":"LAST_WEEK","queries":[{"resourceURIs":["services/"],"metrics":["RequestsTimedOut"]}],"metadata":{"temp":false,"title":"Timed-out requests for the last 7 days","managerReport":true,"styles":{"services/":{"color":"#2F9400"}}}}

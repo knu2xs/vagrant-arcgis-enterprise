@@ -1,0 +1,1 @@
+{"id":"f6e35325-7992-4be1-b1dd-6ace007e412f","type":"COMPUTE_PLATFORM","provider":"Spark","info":{"secretKey":"{crypt}OprLkc5IvvlxIuUctNrO/taMgSC+WHJLghpVpUSgPzBKqPpJCuspqQ==","clusterURL":"spark://UBUNTU-XENIAL.LOCALDOMAIN:7077","enableWebUI":false,"ssl":false,"version":"1.6.0"}}

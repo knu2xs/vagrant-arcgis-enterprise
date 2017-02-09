@@ -1,0 +1,1 @@
+{"name":"arcgisindex","physicalPath":"/opt/arcgis/server/usr/directories/arcgissystem/arcgisindex","directoryType":"INDEX","cleanupMode":"NONE","maxFileAge":0,"description":"Stores indexes of data locations used by the search service.","useLocalDir":"false","localDirectoryPath":"","virtualPath":"/rest/directories/arcgisindex"}

@@ -1,0 +1,1 @@
+{"id":"f2322362-3c1e-486d-b801-40bb7ca0f0a8","type":"MESSAGE_BUS","provider":"RabbitMQ","info":{"password":"7a394e37706972484c654b646244464455712f546b393665374853675a4c706951365557372b78383679733d","platformTopics":["arcgis-admin-events"],"port":27271,"version":"3.2.3","ssl":true,"user":"3c1e85bb-3b49-4712-9244-bafa0b313d0e"}}

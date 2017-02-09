@@ -1,0 +1,80 @@
+{
+  "serviceName": "SampleWorldCities",
+  "type": "MapServer",
+  "description": "The SampleWorldCities service is provided so you can quickly and easily preview the functionality of the GIS server. Click the thumbnail image to open in a web application. This sample service is optional and can be deleted.",
+  "capabilities": "Map,Query,Data",
+  "provider": "ArcObjects",
+  "clusterName": "default",
+  "minInstancesPerNode": 1,
+  "maxInstancesPerNode": 1,
+  "instancesPerContainer": 1,
+  "maxWaitTime": 60,
+  "maxStartupTime": 300,
+  "maxIdleTime": 180,
+  "maxUsageTime": 600,
+  "loadBalancing": "ROUND_ROBIN",
+  "isolationLevel": "HIGH",
+  "configuredState": "STARTED",
+  "recycleInterval": 24,
+  "recycleStartTime": "00:00",
+  "keepAliveInterval": -1,
+  "private": false,
+  "isDefault": false,
+  "maxUploadFileSize": 0,
+  "allowedUploadFileTypes": "",
+  "properties": {
+    "useLocalCacheDir": "true",
+    "outputDir": "${arcgisoutput}",
+    "cacheDir": "${arcgiscache}",
+    "maxScale": "4000",
+    "filePath": "${AGSSERVER}/framework/etc/data/WorldCities/WorldCities.msd",
+    "maxRecordCount": "1000",
+    "supportedImageReturnTypes": "MIME+URL",
+    "clientCachingAllowed": "true",
+    "isCached": "false",
+    "virtualOutputDir": "/rest/directories/arcgisoutput",
+    "maxExportTilesCount": "100000",
+    "ignoreCache": "false",
+    "exportTilesAllowed": "false",
+    "cacheOnDemand": "false",
+    "minScale": "295000000"
+  },
+  "extensions": [
+    {
+      "typeName": "WMSServer",
+      "capabilities": "GetCapabilities,GetFeatureInfo,GetLegendGraphic,GetMap,GetSchemaExtension,GetStyles",
+      "enabled": "true",
+      "maxUploadFileSize": 0,
+      "allowedUploadFileTypes": "",
+      "properties": {
+        "name": "SampleWorldCities",
+        "title": "WMS"
+      }
+    },
+    {
+      "typeName": "KmlServer",
+      "capabilities": "SingleImage,SeparateImages,Vectors",
+      "enabled": "true",
+      "maxUploadFileSize": 0,
+      "allowedUploadFileTypes": "",
+      "properties": {
+        "compatibilityMode": "GoogleEarth",
+        "useDefaultSnippets": "true",
+        "featureLimit": "1000000",
+        "minRefreshPeriod": "30",
+        "imageSize": "1024",
+        "dpi": "96"
+      }
+    },
+    {
+      "typeName": "FeatureServer",
+      "capabilities": "Create,Query,Update,Delete,Uploads",
+      "enabled": "false",
+      "maxUploadFileSize": 0,
+      "allowedUploadFileTypes": "",
+      "properties": {}
+    }
+  ],
+  "frameworkProperties": {},
+  "datasets": []
+}
