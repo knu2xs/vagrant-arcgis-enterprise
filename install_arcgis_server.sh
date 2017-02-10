@@ -45,3 +45,10 @@ sudo cp /tmp/config_files/arcgisserver /etc/init.d/
 
 # set ArcGIS Server to start with the instance boot
 sudo /lib/systemd/systemd-sysv-install enable arcgisserver
+
+# post to use the admin api to set up the server site using the default config-store and directories locations
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
+  -d 'username=admin&password=Esri%24tud&f=json' \
+  "http://localhost:6080/arcgis/admin/createNewSite"
+
+
