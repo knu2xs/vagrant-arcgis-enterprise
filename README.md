@@ -17,6 +17,7 @@ The functionality of this repo can only be realized by using Vagrant with Virtua
 No, everything you need to get up and running out of the box is not included in this repository. Fortunately, the rest is not hard to find. You need to download the Esri software installation resources along with a license file to be ready to head to the races.
 
 You are going to need the ArcGIS Server tar.gz file, along with a prvc license file. Both of these need to be placed in the resources directory, inside a folder you will have to create named proprietary. Once finished, the directory structure should look like this.
+```
 - resources
   |- proprietary
      |- ArcGIS_Server_Linux_105_154052.tar.gz
@@ -26,6 +27,7 @@ You are going to need the ArcGIS Server tar.gz file, along with a prvc license f
 - LICENSE
 - README.md
 - Vagrantfile
+```
 
 ## Use
 
