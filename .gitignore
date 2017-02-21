@@ -3,3 +3,6 @@
 **/.DS_Store
 *.log
 /resources/proprietary
+.idea
+**/*/*.prvc
+**/*/ArcGIS*.tar.gz

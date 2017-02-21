@@ -4,9 +4,9 @@ As a Solution Engineer, frequently I have the need to have a demonstration envir
 
 This is a project to get ArcGIS Enterprise up and running using a Vagrant file on Ununtu Linux. Using this project requires VirtualBox and Vagrant to be installed and set up on your host machine. Futher, you need to procure your own installation files and license files. Once fulfilling these two requirements, you have everything you need to quickly, in Vagrant parlance, provision an ArcGIS Enterprise environment.
 
-## Current Status: 09 Feb 2017
+## Current Status: 20 Feb 2017
 
-Right now all I have been able to sucessfully do is get ArcGIS Server installed, and the initial default site set up with a username / password combination of *admin / Esri$tud*.
+The Vagrantfile calls a number of bash scripts to install ArcGIS Server, set up the ArcGIS Server site, install the Web Adapter, configre ArcGIS Server with the Web Adaptor, and install Portal. All the username / password credentials are *admin / Esri380*. Next up, I still need to create a self-signed certificate, configure Portal with the Web Adaptor, and federate Portal and Server.
 
 ## Prerequsites - Vagrant + VirtualBox
 
