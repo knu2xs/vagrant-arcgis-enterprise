@@ -30,13 +30,13 @@ Vagrant.configure("2") do |config|
 
   # run scripts to setup arcgis server
   config.vm.provision "shell", path: "resources/arcgis_scripts/ubuntu_update.sh"
-  config.vm.provision "shell", path: "resources/arcgis_scripts/server_setup_prerequsites.sh"
+  config.vm.provision "shell", path: "resources/arcgis_scripts/server_setup_prerequisites.sh"
   config.vm.provision "shell", path: "resources/arcgis_scripts/server_install.sh"
   config.vm.provision "shell", path: "resources/arcgis_scripts/server_post_install.sh"
-  config.vm.provision "shell", path: "resources/arcgis_scripts/web_adaptor_setup_prerequsites.sh"
+  config.vm.provision "shell", path: "resources/arcgis_scripts/web_adaptor_setup_prerequisites.sh"
   config.vm.provision "shell", path: "resources/arcgis_scripts/web_adaptor_install.sh"
   config.vm.provision "shell", path: "resources/arcgis_scripts/server_config_web_adaptor.sh"
-  config.vm.provision "shell", path: "resources/arcgis_scripts/portal_setup_prerequsites.sh"
+  config.vm.provision "shell", path: "resources/arcgis_scripts/portal_setup_prerequisites.sh"
   config.vm.provision "shell", path: "resources/arcgis_scripts/portal_install.sh"
   config.vm.provision "shell", path: "resources/arcgis_scripts/portal_post_install.sh"
 end
