@@ -32,11 +32,11 @@ You are going to need the tar.gz install resources, along with a prvc license fi
     |- web_adaptor_install.sh
     |- web_adaptor_setup_prerequisites.sh
   |- proprietary
-     |- ArcGIS_Portal_Linux.tar.gz
-     |- ArcGIS_Server_Linux.tar.gz
-     |- ArcGIS_Web_Adaptor_Java_Linux.tar.gz
-     |- portal.prvc
-     |- server.prvc
+    |- ArcGIS_Portal_Linux.tar.gz
+    |- ArcGIS_Server_Linux.tar.gz
+    |- ArcGIS_Web_Adaptor_Java_Linux.tar.gz
+    |- portal.prvc
+    |- server.prvc
 - LICENSE
 - README.md
 - Vagrantfile
