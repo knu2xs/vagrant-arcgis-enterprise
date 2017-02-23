@@ -26,8 +26,8 @@ sudo chown arcgis /etc/authbind/byport/80
 sudo chown arcgis /etc/authbind/byport/443
 
 # add vagrant and arcgis to useful groups for accessing resources
-sudo usermod -a -G adm arcgis
-sudo usermod -a -G adm vagrant
+sudo usermod -a -G adm arcgis      # so arcgis user can view log files
+sudo usermod -a -G adm vagrant     # so vagrant user can view log files
 sudo usermod -a -G tomcat7 arcgis  # required for running tomcat7 as arcgis
 sudo usermod -a -G tomcat7 vagrant
 

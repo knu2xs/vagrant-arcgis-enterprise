@@ -7,4 +7,4 @@ sudo su -c "sudo cp /opt/arcgis/webadaptor10.5/java/arcgis.war /var/lib/tomcat7/
 sleep 30
 
 # configure the Web Adaptor with the local installation of ArcGIS Server
-sudo su -c "/opt/arcgis/webadaptor10.5/java/tools/configurewebadaptor.sh -m server -w http://$HOSTNAME/server/webadaptor -g http://$HOSTNAME:6080 -u admin -p Esri380 -a true" arcgis
+sudo su -c "/opt/arcgis/webadaptor10.5/java/tools/configurewebadaptor.sh -m server -w http://$HOSTNAME/server/webadaptor -g http://$HOSTNAME:6080 -u admin -p Esri3801 -a true" arcgis

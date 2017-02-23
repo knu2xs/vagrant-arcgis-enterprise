@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 # extract installation resources
-tar -xvzf ArcGIS_Portal_Linux.tar.gz -C /tmp
+tar -xvzf /vagrant/resources/proprietary/ArcGIS_Portal_Linux.tar.gz -C /tmp
 
 # run the setup script
 sudo su -c "/tmp/PortalForArcGIS/Setup -m silent -l yes -a /vagrant/resources/proprietary/portal.prvc -d /opt -v" arcgis
