@@ -72,6 +72,7 @@ sudo chmod 750 $KEYSTORE
 # copy a modified server.xml file to enable ssl and reference the newly created keystore file
 sudo cp -rf /vagrant/resources/files/server.xml /opt/tomcat/conf/
 
+
 ### REDIRECT PORTS TO 80 AND 443 USING AUTHBIND ###
 # reference: http://azurvii.blogspot.com/2016/06/tomcat-8-authbind-on-port-80443-systemd.html
 # reference: https://debian-administration.org/article/386/Running_network_services_as_a_non-root_user
