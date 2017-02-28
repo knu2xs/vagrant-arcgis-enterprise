@@ -37,6 +37,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "resources/arcgis_scripts/web_adaptor_install.sh"
   config.vm.provision "shell", path: "resources/arcgis_scripts/server_install.sh"
   config.vm.provision "shell", path: "resources/arcgis_scripts/server_config_web_adaptor.sh"
-  # config.vm.provision "shell", path: "resources/arcgis_scripts/portal_install.sh"
+  config.vm.provision "shell", path: "resources/arcgis_scripts/portal_install.sh"
   # config.vm.provision "shell", path: "resources/arcgis_scripts/portal_config_web_adaptor.sh"
 end

@@ -46,21 +46,14 @@ sudo systemctl daemon-reload
 sudo systemctl enable tomcat.service
 
 
-### REDIRECT PORTS TO 80 AND 443 USING IPTABLES ###
-# reference: https://www.cyberciti.biz/faq/linux-port-redirection-with-iptables/
-# sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
-# sudo iptables -t nat -A PREROUTING -p tcp --dport 443 -j REDIRECT --to-port 8443
-# iptables-save
-
-
 ### SETUP SECURITY CERTIFICATE ###
 # variable where we are going to store the keystore
 KEYSTORE="/opt/tomcat/conf/keystore.ks"
 
-# # get the fully qualified domain name
+# get the fully qualified domain name
 CN="$(hostname --fqdn)"
 
-# # generate the security certificate
+# generate the security certificate
 sudo keytool \
   -genkey \
   -keyalg RSA \
@@ -70,9 +63,9 @@ sudo keytool \
   -keypass Esri3801 \
   -validity 365 \
   -keysize 4096 \
-  -dname "cn=$CN, ou=Testing, o=Esri, l=Olympia, s=Washington, c=US"
+  -dname "cn=$CN, ou=Demonstration, o=Esri, l=Olympia, s=Washington, c=US"
 
-# # change the ownerhsip and permissions on the security certificate
+# change the ownerhsip and permissions on the security certificate
 sudo chown arcgis:arcgis $KEYSTORE
 sudo chmod 750 $KEYSTORE
 
@@ -83,12 +76,12 @@ sudo cp -rf /vagrant/resources/files/server.xml /opt/tomcat/conf/
 # reference: http://azurvii.blogspot.com/2016/06/tomcat-8-authbind-on-port-80443-systemd.html
 # reference: https://debian-administration.org/article/386/Running_network_services_as_a_non-root_user
 # install and configure authbind
-sudo apt install -y authbind
+sudo apt-get install -y authbind
 sudo touch /etc/authbind/byport/{443,80}
 sudo chmod 550 /etc/authbind/byport/{443,80}
 sudo chown arcgis:arcgis /etc/authbind/byport/{443,80}
 
-# # configure tomcat to use ports 80 and 443
+# # configure tomcat to use ports 80 and 443 instead of the default ports 8080 and 8443
 sudo sed -i 's/8080/80/g' /opt/tomcat/conf/server.xml
 sudo sed -i 's/8443/443/g' /opt/tomcat/conf/server.xml
 
