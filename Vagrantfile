@@ -5,6 +5,7 @@ Vagrant.configure("2") do |config|
 
   # Set the base box to be Ubuntu 16.04 LTS
   config.vm.box = "bento/ubuntu-16.04"
+  # config.vm.box = "ubuntu/xenial64"
 
   # Forward port mapping for ports to be exposed direclty on machine, as if
   # on the localhost...both are for ArcGIS Server communication
@@ -30,13 +31,12 @@ Vagrant.configure("2") do |config|
 
   # run scripts to setup arcgis server
   config.vm.provision "shell", path: "resources/arcgis_scripts/ubuntu_update.sh"
-  config.vm.provision "shell", path: "resources/arcgis_scripts/server_setup_prerequisites.sh"
-  config.vm.provision "shell", path: "resources/arcgis_scripts/server_install.sh"
-  config.vm.provision "shell", path: "resources/arcgis_scripts/server_post_install.sh"
-  config.vm.provision "shell", path: "resources/arcgis_scripts/web_adaptor_setup_prerequisites.sh"
+  config.vm.provision :reload
+  config.vm.provision "shell", path: "resources/arcgis_scripts/add_user_arcgis_and_create_install_location.sh"
+  config.vm.provision "shell", path: "resources/arcgis_scripts/tomcat_install.sh"
   config.vm.provision "shell", path: "resources/arcgis_scripts/web_adaptor_install.sh"
+  config.vm.provision "shell", path: "resources/arcgis_scripts/server_install.sh"
   config.vm.provision "shell", path: "resources/arcgis_scripts/server_config_web_adaptor.sh"
-  config.vm.provision "shell", path: "resources/arcgis_scripts/portal_setup_prerequisites.sh"
-  config.vm.provision "shell", path: "resources/arcgis_scripts/portal_install.sh"
-  config.vm.provision "shell", path: "resources/arcgis_scripts/portal_post_install.sh"
+  # config.vm.provision "shell", path: "resources/arcgis_scripts/portal_install.sh"
+  # config.vm.provision "shell", path: "resources/arcgis_scripts/portal_config_web_adaptor.sh"
 end

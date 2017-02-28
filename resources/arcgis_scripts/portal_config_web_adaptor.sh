@@ -3,17 +3,16 @@
 # get the fully qualified domain name
 FQDN="$(hostname --fqdn)"
 
-# copy the Web Adaptor WAR to be used in Tomcat for server at the ./server and ./portal urls
-sudo su -c "sudo cp /opt/arcgis/webadaptor10.5/java/arcgis.war /opt/tomcat/webapps/server.war" arcgis
+# copy the Web Adaptor WAR to be used in Tomcat for portal at the ./portal url
+sudo su -c "sudo cp /opt/arcgis/webadaptor10.5/java/arcgis.war /opt/tomcat/webapps/portal.war" arcgis
 
 # give tomcat a chance to recognize the new application...30 seconds
 sleep 30
 
 # configure the Web Adaptor with the local installation of ArcGIS Server
 sudo /opt/arcgis/webadaptor10.5/java/tools/configurewebadaptor.sh \
-  -m server \
-  -w http://$FQDN:8080/server/webadaptor \
-  -g http://$FQDN:6080 \
+  -m portal \
+  -w https://$FQDN:8443/portal/webadaptor \
+  -g https://$FQDN:7443 \
   -u admin \
-  -p Esri3801 \
-  -a true
+  -p Esri3801
