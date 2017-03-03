@@ -1,14 +1,14 @@
 # Vagrant ArcGIS Enterprise
 
-## For the Impatient (most of you)
-
-* Read the Setup Section, get the install and license files, and put them in the right place with the right names
-* `vagrant up`
-* It's not done yet, so check the current status to see how far I've made it.
-
 As a Solution Engineer, frequently I have the need to have a demonstration environment to show clients. Increasingly, much of the functionality I am demonstrating is moving toward being web based. This functionality requires a multi-step install, and configuration on some sort of server environment. This process is time consuming and laborious at best. Fortunately Vagrant provides a way to dramatically streamline this process.
 
 This is a project to get ArcGIS Enterprise up and running using a Vagrant file on Ununtu Linux. Using this project requires VirtualBox and Vagrant to be installed and set up on your host machine. Futher, you need to procure your own installation files and license files. Once fulfilling these two requirements, you have everything you need to quickly, in Vagrant parlance, provision a basic ArcGIS Enterprise environment.
+
+## For the Impatient (most of you)
+
+* Read the Setup Section. Get the install and license files, and put them in the right place with the right names.
+* `vagrant up`
+* It's not done yet, so check the current status to see how far I've made it.
 
 ## Current Status: 02 Mar 2017
 
