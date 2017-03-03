@@ -4,9 +4,9 @@ As a Solution Engineer, frequently I have the need to have a demonstration envir
 
 This is a project to get ArcGIS Enterprise up and running using a Vagrant file on Ununtu Linux. Using this project requires VirtualBox and Vagrant to be installed and set up on your host machine. Futher, you need to procure your own installation files and license files. Once fulfilling these two requirements, you have everything you need to quickly, in Vagrant parlance, provision a basic ArcGIS Enterprise environment.
 
-## Current Status: 20 Feb 2017
+## Current Status: 02 Mar 2017
 
-The Vagrantfile calls a number of bash scripts to install ArcGIS Server, set up the ArcGIS Server site, install the Web Adapter, configre ArcGIS Server with the Web Adaptor, and install Portal. All the username / password credentials are *admin / Esri3801*. Next up, I still need to create a self-signed certificate, configure Portal with the Web Adaptor, and federate Portal and Server. This is proving to be increasingly vexing...
+All the username / password credentials are *admin / Esri3801*. Server and Portal are registering with the Web Adaptor running on ports 80 and 443 with a self-signed certificate generated on the fly as part of the build. Server and Portal can be manually federated, but the script does not seem to be working for some reason. Also, while the script for the Data Store installs the data store, calling the configuration script to set it up with Server is failing as well. Hence, it is getting very close, but not quite there yet - close, _so very close!_
 
 ## Prerequsites - Vagrant + VirtualBox
 
@@ -19,24 +19,25 @@ No, everything you need to get up and running out of the box is not included in 
 You are going to need the tar.gz install resources, along with a prvc license files for Portal and Server. Both of these need to be renamed and placed in the resources directory, inside a folder you will have to create named proprietary. Once finished, the directory structure should look like this.
 ```
 - resources
-  |- arcgis_scripts
-    |- portal_config_web_adaptor.sh
-    |- portal_install.sh
-    |- portal_post_install.sh
-    |- portal_setup_prerequisites.sh
-    |- server_config_web_adaptor.sh
-    |- server_install.sh
-    |- server_post_install.sh
-    |- server_setup_prerequisites.sh
-    |- ubuntu_update.sh
-    |- web_adaptor_install.sh
-    |- web_adaptor_setup_prerequisites.sh
   |- proprietary
+    |- ArcGIS_DataStore_Linux.tar.gz
     |- ArcGIS_Portal_Linux.tar.gz
     |- ArcGIS_Server_Linux.tar.gz
     |- ArcGIS_Web_Adaptor_Java_Linux.tar.gz
     |- portal.prvc
     |- server.prvc
+  |- scripts
+    |- data_store_install.sh
+    |- federate.sh
+    |- portal_config_web_adaptor.sh
+    |- portal_install.sh
+    |- server_config_web_adaptor.sh
+    |- server_install.sh
+    |- setup_prerequisites.sh
+    |- tomcat_install.sh
+    |- ubuntu_update.sh
+    |- web_adaptor_install.sh
+-.gitignore
 - LICENSE
 - README.md
 - Vagrantfile
