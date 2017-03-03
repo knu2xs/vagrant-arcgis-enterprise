@@ -7,7 +7,7 @@ FQDN="$(hostname --fqdn)"
 sudo apt-get install -y dos2unix fontconfig gettext libice6 libsm6 libxtst6 libxrender1
 
 # extract installation resources
-tar -xvzf /vagrant/resources/proprietary/ArcGIS_Portal_Linux.tar.gz -C /tmp
+tar -xzf /vagrant/resources/proprietary/ArcGIS_Portal_Linux.tar.gz -C /tmp
 
 # determine if prvc or ecp license is being used and save the path
 if [ -f "/vagrant/resources/proprietary/server.prvc" ]; then
@@ -17,7 +17,7 @@ elif [ -f "/vagrant/resources/proprietary/server.ecp" ]; then
 fi
 
 # run the setup script
-sudo su -c "/tmp/PortalForArcGIS/Setup -m silent -l yes -a /vagrant/resources/proprietary/portal.prvc -d /opt -v" arcgis
+sudo su -c "/tmp/PortalForArcGIS/Setup -m silent -l yes -a /vagrant/resources/proprietary/portal.prvc -d /opt" arcgis
 
 # clean out the installation resources
 rm -rf /tmp/PortalForArcGIS

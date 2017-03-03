@@ -6,10 +6,10 @@ PASSWORD="Esri3801"
 FQDN=$(hostname --fqdn)
 
 # extract the data store install archive to the temp directory
-tar xvzf /vagrant/resources/proprietary/ArcGIS_DataStore_Linux.tar.gz -C /tmp
+tar -xzf /vagrant/resources/proprietary/ArcGIS_DataStore_Linux.tar.gz -C /tmp
 
 # run the data store install script
-sudo su -c "/tmp/ArcGISDataStore_Linux/Setup -m silent -l yes -d /opt/arcgis -v" arcgis
+sudo su -c "/tmp/ArcGISDataStore_Linux/Setup -m silent -l yes -d /opt/arcgis" arcgis
 
 # copy the startup file to the init.d directory so ArcGIS Server will know how to start with the instance boot
 sudo cp /opt/arcgis/datastore/framework/etc/scripts/arcgisdatastore.service /etc/systemd/system

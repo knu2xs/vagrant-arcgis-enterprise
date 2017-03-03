@@ -21,7 +21,7 @@ elif [ -f "/vagrant/resources/proprietary/server.ecp" ]; then
 fi
 
 # install ArcGIS Server as the arcgis user
-sudo su -c "/tmp/ArcGISServer/Setup -m silent -l yes -a $LICENSE_FILE -d /opt/arcgis -v" arcgis
+sudo su -c "/tmp/ArcGISServer/Setup -m silent -l yes -a $LICENSE_FILE -d /opt/arcgis" arcgis
 
 # clean out the installation resources
 rm -rf /tmp/ArcGISServer
