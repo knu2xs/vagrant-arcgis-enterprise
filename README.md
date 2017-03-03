@@ -10,19 +10,19 @@ This is a project to get ArcGIS Enterprise up and running using a Vagrant file o
 * `vagrant up`
 * It's not done yet, so check the current status to see how far I've made it.
 
-## Current Status: 02 Mar 2017
+## Current Status: 03 Mar 2017
 
-All the username / password credentials are *admin / Esri3801*. Server and Portal are registering with the Web Adaptor running on ports 80 and 443 with a self-signed certificate generated on the fly as part of the build. Server and Portal can be manually federated, but the script does not seem to be working for some reason. Also, while the script for the Data Store installs the data store, calling the configuration script to set it up with Server is failing as well. Hence, it is getting very close, but not quite there yet - close, _so very close!_
+All the username / password credentials are *admin / Esri3801*. A relational Data Store is set up. and registered with Server to host feature services. Server and Portal are registering with the Web Adaptor running on ports 80 and 443 with a self-signed certificate generated on the fly as part of the build. Server and Portal can be manually federated, but the script does not seem to be working for some reason. Hence, it is getting very close, but not quite there yet - close, _so very close!_
 
-# Prerequsites - Vagrant + VirtualBox
+# Prerequsites - VirtualBox + Vagrant + Vagrant Reload
 
-The functionality of this repo can only be realized by using Vagrant with VirtualBox. Get these and get them installed on your host machine, and you will be good to go.
+The functionality of this repo can only be realized by using VirtualBox, Vagrant, and the Vagrant Reload extension. Get these and get them installed on your host machine, and you will be good to go.
 
 # Setup
 
 No, everything you need to get up and running out of the box is not included in this repository. Fortunately, the rest is not hard to find if you have access to the right resources. You need to download the Esri software installation resources along with a license file to be ready to head to the races.
 
-You are going to need the tar.gz install resources, along with a prvc license files for Portal and Server. Both of these need to be renamed and placed in the resources directory, inside a folder you will have to create named proprietary. Once finished, the directory structure should look like this.
+You are going to need the tar.gz install resources for Portal, Server, Web Adaptor, and the Data Store, along with prvc or ecp license files for Portal and Server. All of these resources need to be renamed and placed in the resources directoryas detailed in the tree below. Once finished, the directory structure should look like this.
 ```
 - resources
   |- proprietary
@@ -32,6 +32,7 @@ You are going to need the tar.gz install resources, along with a prvc license fi
     |- ArcGIS_Web_Adaptor_Java_Linux.tar.gz
     |- portal.prvc
     |- server.prvc
+    |- favicon.ico (optional)
   |- scripts
     |- data_store_install.sh
     |- federate.sh

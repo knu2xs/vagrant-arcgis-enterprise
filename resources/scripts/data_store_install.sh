@@ -23,4 +23,4 @@ sudo chown arcgis:arcgis /var/spatial
 sudo chmod 754 /var/spatial
 
 # set up a relational data store to support feature layer publishing
-sudo /opt/arcgis/datastore/tools/configuredatastore.sh https://$FQDN:6443/arcgis $USERNAME $PASSWORD /var/spatial --stores relational
+sudo su -c "/opt/arcgis/datastore/tools/configuredatastore.sh https://localhost:6443/arcgis $USERNAME $PASSWORD /opt/arcgis/datastore/usr/arcgisdatastore --stores relational" arcgis

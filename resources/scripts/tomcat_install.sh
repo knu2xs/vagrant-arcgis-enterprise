@@ -73,6 +73,12 @@ sudo chmod 750 $KEYSTORE
 sudo cp -rf /vagrant/resources/files/server.xml /opt/tomcat/conf/
 
 
+### IF A FAVICON IS PROVIDED, USE IT ###
+if [ -f /vagrant/resources/proprietary/favicon.ico ]; then
+  sudo cp -f /vagrant/resources/proprietary/favicon.ico /opt/tomcat/webapps/ROOT
+fi
+
+
 ### REDIRECT PORTS TO 80 AND 443 USING AUTHBIND ###
 # reference: http://azurvii.blogspot.com/2016/06/tomcat-8-authbind-on-port-80443-systemd.html
 # reference: https://debian-administration.org/article/386/Running_network_services_as_a_non-root_user
