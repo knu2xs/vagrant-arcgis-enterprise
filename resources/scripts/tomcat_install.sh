@@ -53,7 +53,7 @@ KEYSTORE="/opt/tomcat/conf/keystore.ks"
 # get the fully qualified domain name
 CN="$(hostname --fqdn)"
 
-# generate the security certificate
+# generate the security certificate using keytool
 sudo keytool \
   -genkey \
   -keyalg RSA \

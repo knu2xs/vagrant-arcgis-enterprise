@@ -4,10 +4,6 @@
 # install arcgis server prerequsite package
 sudo apt-get install -y gettext
 
-# edit the limits.conf file per server prerequsite requirements
-sudo sed -e 's/# End of file/* soft nofile 65535\n* hard nofile 65535\n* soft nproc 25059\n* hard nproc 25059\n\n# End of file/' -i /etc/security/limits.conf
-
-
 ### INSTALL ARCGIS SERVER ###
 # extract the installation resources from the vagrant directory
 tar -zxvf /vagrant/resources/proprietary/ArcGIS_Server*.tar.gz -C /tmp
@@ -17,8 +13,15 @@ sudo echo '#!/bin/bash' > /tmp/ArcGISServer/serverdiag/.diag/check_limits.sh
 sudo echo 'exit $STATUS_PASSED' >> /tmp/ArcGISServer/serverdiag/.diag/check_limits.sh
 sudo cp /tmp/ArcGISServer/serverdiag/.diag/check_limits.sh /tmp/ArcGISServer/serverdiag/.diag/check_root_installer.sh
 
+# determine if prvc or ecp license is being used and save the path
+if [ -f "/vagrant/resources/proprietary/server.prvc" ]; then
+   LICENSE_FILE="/vagrant/resources/proprietary/server.prvc"
+elif [ -f "/vagrant/resources/proprietary/server.ecp" ]; then
+   LICENSE_FILE="/vagrant/resources/proprietary/server.ecp"
+fi
+
 # install ArcGIS Server as the arcgis user
-sudo su -c "/tmp/ArcGISServer/Setup -m silent -l yes -a /vagrant/resources/proprietary/server.prvc -d /opt/arcgis -v" arcgis
+sudo su -c "/tmp/ArcGISServer/Setup -m silent -l yes -a $LICENSE_FILE -d /opt/arcgis -v" arcgis
 
 # clean out the installation resources
 rm -rf /tmp/ArcGISServer
