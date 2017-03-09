@@ -51,7 +51,7 @@ sudo systemctl enable tomcat.service
 KEYSTORE="/opt/tomcat/conf/keystore.ks"
 
 # get the fully qualified domain name
-CN="$(hostname --fqdn)"
+FQDN="$(hostname --fqdn)"
 
 # generate the security certificate using keytool
 sudo keytool \
@@ -63,7 +63,7 @@ sudo keytool \
   -keypass Esri3801 \
   -validity 365 \
   -keysize 4096 \
-  -dname "cn=$CN, ou=Demonstration, o=Esri, l=Olympia, s=Washington, c=US"
+  -dname "cn=$FQDN, ou=Demonstration, o=Esri, l=Olympia, s=Washington, c=US"
 
 # change the ownerhsip and permissions on the security certificate
 sudo chown arcgis:arcgis $KEYSTORE

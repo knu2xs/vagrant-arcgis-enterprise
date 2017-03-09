@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 # get the fully qualified domain name
-FQDN=$(hostname -fqdn)
+FQDN=$(hostname --fqdn)
 USERNAME="admin"
 PASSWORD="Esri3801"
 

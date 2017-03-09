@@ -1,11 +1,11 @@
 #!/bin/bash -x
 
 # get the fully qualified domain name
-FQDN=$(hostname -fqdn)
+FQDN=$(hostname --fqdn)
 USERNAME="admin"
 PASSWORD="Esri3801"
 
-# create the location to store the data
+# create the location to store the data with permissions
 sudo mkdir /var/spatial/relational
 sudo chown arcgis:arcgis /var/spatial/relational
 
