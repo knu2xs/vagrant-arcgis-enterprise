@@ -5,8 +5,12 @@ USERNAME="admin"
 PASSWORD="Esri3801"
 FQDN=$(hostname --fqdn)
 
+# configure /etc/sysctl.conf file
+sudo sysctl -w vm.max_map_count=262144
+sudo sysctl -w vm.swappiness=1
+
 # extract the data store install archive to the temp directory
-tar -xzf /vagrant/resources/proprietary/ArcGIS_DataStore_Linux.tar.gz -C /tmp
+tar xvzf /vagrant/resources/proprietary/ArcGIS_DataStore_Linux.tar.gz -C /tmp
 
 # run the data store install script
 sudo su -c "/tmp/ArcGISDataStore_Linux/Setup -m silent -l yes -d /opt/arcgis" arcgis
@@ -21,6 +25,3 @@ sudo systemctl enable arcgisdatastore
 sudo mkdir /var/spatial
 sudo chown arcgis:arcgis /var/spatial
 sudo chmod 754 /var/spatial
-
-# set up a relational data store to support feature layer publishing
-sudo su -c "/opt/arcgis/datastore/tools/configuredatastore.sh https://localhost:6443/arcgis $USERNAME $PASSWORD /opt/arcgis/datastore/usr/arcgisdatastore --stores relational" arcgis

@@ -39,7 +39,7 @@ vagrant plugin install vagrant-reload
 
 ## Windows - Chocolatey
 
-If you are back on the Windows side of the house, fortunately you are not left out. You have [Chocolatey](https://chocolatey.org/). While getting chocolate is nowhere near as cool as a nice homebrew, thankfully a package manager is avaialble for Windows as well (I'm a dad, so I am allowed to make bad jokes). The steps are not dramatically different; install Chocolately, then VirtualBox, Vagrant, and Vagrant Manager, and finally install Vagrant Reload. Fire up either Command Prompt, or my preference, PowerShell, and use the following commands to get started. Incidentally, you may have to follow the [directions referenced on the Chocolatey install page](https://chocolatey.org/install) to ensure the Get-ExecutionPolicy is not restricted to get Chocolatey installed.
+If you are back on the Windows side of the house, fortunately you are not left out. While getting chocolate is nowhere near as cool as a nice homebrew, thankfully a package manager is avaialble for Windows as well (I'm a dad, so I am allowed to make bad jokes). The steps are not dramatically different; install Chocolately, then VirtualBox, Vagrant, and Vagrant Manager, and finally install Vagrant Reload. Fire up either Command Prompt, or my preference, PowerShell, and use the following commands to get started. Incidentally, you may have to follow the [directions referenced on the Chocolatey install page](https://chocolatey.org/install) to ensure the Get-ExecutionPolicy is not restricted to get Chocolatey installed.
 ```
 # install Chocolatey
 iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
