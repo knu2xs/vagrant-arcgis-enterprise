@@ -13,7 +13,7 @@ sudo chmod 740 /opt/tomcat /opt/arcgis
 # download Tomcat 8.0.32 to the temp directory and install to /opt
 curl -O -o /tmp https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.32/bin/apache-tomcat-8.0.32.tar.gz
 mv apache* /tmp
-sudo tar xzvf /tmp/apache-tomcat-*tar.gz -C /opt/tomcat --strip-components=1
+sudo tar xzf /tmp/apache-tomcat-*tar.gz -C /opt/tomcat --strip-components=1
 
 # change the ownerhip of all tomcat resources to arcgis
 sudo chown -R arcgis:arcgis /opt/tomcat
@@ -51,7 +51,7 @@ sudo systemctl enable tomcat.service
 KEYSTORE="/opt/tomcat/conf/keystore.ks"
 
 # get the fully qualified domain name
-CN="$(hostname --fqdn)"
+FQDN="$(hostname --fqdn)"
 
 # generate the security certificate using keytool
 sudo keytool \
@@ -63,7 +63,7 @@ sudo keytool \
   -keypass Esri3801 \
   -validity 365 \
   -keysize 4096 \
-  -dname "cn=$CN, ou=Demonstration, o=Esri, l=Olympia, s=Washington, c=US"
+  -dname "cn=$FQDN, ou=Demonstration, o=Esri, l=Olympia, s=Washington, c=US"
 
 # change the ownerhsip and permissions on the security certificate
 sudo chown arcgis:arcgis $KEYSTORE

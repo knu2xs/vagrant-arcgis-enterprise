@@ -4,6 +4,7 @@
 USERNAME="admin"
 PASSWORD="Esri3801"
 FQDN=$(hostname --fqdn)
+DN=$(hostname)
 
 # post to the sharing REST API to get the token in a JSON response
 RESPONSE=$(curl -k -X POST "https://$FQDN/portal/sharing/generateToken" \
