@@ -28,6 +28,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "resources/scripts/portal_install.sh"
   config.vm.provision "shell", path: "resources/scripts/server_install.sh"
   config.vm.provision "shell", path: "resources/scripts/data_store_install.sh"
+  config.vm.provision "shell", path: "resources/scripts/data_store_config_relational.sh"
   config.vm.provision "shell", path: "resources/scripts/tomcat_install.sh"
   config.vm.provision "shell", path: "resources/scripts/web_adaptor_install.sh"
   config.vm.provision "shell", path: "resources/scripts/server_config_web_adaptor.sh"
