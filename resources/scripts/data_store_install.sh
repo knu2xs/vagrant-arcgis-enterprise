@@ -10,7 +10,7 @@ sudo sysctl -w vm.max_map_count=262144
 sudo sysctl -w vm.swappiness=1
 
 # extract the data store install archive to the temp directory
-tar xzf /vagrant/resources/proprietary/ArcGIS_DataStore_Linux.tar.gz -C /tmp
+tar -xzf /vagrant/resources/proprietary/ArcGIS_DataStore_Linux.tar.gz -C /tmp
 
 # run the data store install script
 sudo su -c "/tmp/ArcGISDataStore_Linux/Setup -m silent -l yes -d /opt/arcgis" arcgis

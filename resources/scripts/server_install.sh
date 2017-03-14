@@ -13,19 +13,23 @@ sudo echo '#!/bin/bash' > /tmp/ArcGISServer/serverdiag/.diag/check_limits.sh
 sudo echo 'exit $STATUS_PASSED' >> /tmp/ArcGISServer/serverdiag/.diag/check_limits.sh
 sudo cp /tmp/ArcGISServer/serverdiag/.diag/check_limits.sh /tmp/ArcGISServer/serverdiag/.diag/check_root_installer.sh
 
-# determine if prvc or ecp license is being used and save the path
-LICENSE_FILE_ROOT_PATH="/vagrant/resources/proprietary/server."
-if [ -f $LICENSE_FILE_ROOT_PATH"prvc" ]; then
-   LICENSE_FILE=$LICENSE_FILE_ROOT_PATH"prvc"
-elif [ -f $LICENSE_FILE_ROOT_PATH"ecp" ]; then
-   LICENSE_FILE=$LICENSE_FILE_ROOT_PATH"ecp"
+# install ArcGIS Server as the arcgis user
+sudo su -c "/tmp/ArcGISServer/Setup -m silent -l yes -d /opt/arcgis" arcgis
+
+# license the server - separate since have to use two files to get everything licensed
+LICENSE_FILE_ROOT_PATH="/vagrant/resources/proprietary/"
+
+if [ -f $LICENSE_FILE_ROOT_PATH"server.prvc" ]; then
+   sudo su -c "/opt/arcgis/server/tools/authorizeSoftware -f /vagrant/resources/proprietary/server.prvc" arcgis
+elif [ -f $LICENSE_FILE_ROOT_PATH"server.ecp" ]; then
+   sudo su -c "/opt/arcgis/server/tools/authorizeSoftware -f /vagrant/resources/proprietary/server.ecp" arcgis
 fi
 
-# install ArcGIS Server as the arcgis user
-sudo su -c "/tmp/ArcGISServer/Setup -m silent -l yes -a $LICENSE_FILE -d /opt/arcgis" arcgis
-
-# clean out the installation resources
-rm -rf /tmp/ArcGISServer
+if [ -f $LICENSE_FILE_ROOT_PATH"geoanalytics.prvc" ]; then
+   sudo su -c "/opt/arcgis/server/tools/authorizeSoftware -f /vagrant/resources/proprietary/geoanalytics.prvc" arcgis
+elif [ -f $LICENSE_FILE_ROOT_PATH"geoanalytics.ecp" ]; then
+   sudo su -c "/opt/arcgis/server/tools/authorizeSoftware -f /vagrant/resources/proprietary/geoanalytics.ecp" arcgis
+fi
 
 # copy the startup file to the init.d directory so ArcGIS Server will know how to start with the instance boot
 sudo cp /opt/arcgis/server/framework/etc/scripts/arcgisserver /etc/init.d/
